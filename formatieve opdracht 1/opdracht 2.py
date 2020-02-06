@@ -1,3 +1,4 @@
+# in samenwerking met Kai ter Horst
 def vergelijker(string1, string2):
     if string1 == string2:
         print('er is geen verschil tussen de strings')

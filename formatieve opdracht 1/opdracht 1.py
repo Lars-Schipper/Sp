@@ -1,3 +1,5 @@
+# in samenwerking met Kai ter Horst
+
 def forpyramide(n):
     print('===met for loop===')
 

@@ -2,8 +2,6 @@
 
 def forpyramide(n):
     print('===met for loop===')
-
-    # mylist = []
     for i in range(n+1):
         print(i*'*')
     for j in reversed((range(n))):
@@ -15,7 +13,6 @@ def whilepyramide(n):
     while counter in range(n):
         counter += 1
         print(counter*'*')
-
     counter2 = n
     while counter2 in (range(n+1)):
         counter2 -= 1
@@ -23,7 +20,6 @@ def whilepyramide(n):
 
 def omgekeerdepyramide(n):
     print('===omgekeerd===')
-
     for i in range(n + 1):
         print((n - i)* ' '+ i * '*')
     for i in reversed(range(n)):

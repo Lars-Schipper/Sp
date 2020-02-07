@@ -12,9 +12,12 @@ def palidroom_check_met_library(woord):
 
     for i in revlist:
         revstr += i
+    if revstr == woord:
+        return True
+    else:
+        return False
 
-    print(revstr)
-    return
+
 
 woord = input('welk woord wil je checken of het een palidroom is?: ')
 print('==== zonder library ====')
@@ -24,4 +27,7 @@ else:
     print('het woord', woord, 'is geen palidroom')
 
 print('==== met library ====')
-palidroom_check_met_library(woord)
+if palidroom_check_met_library(woord) == True:
+    print('het woord', woord, 'is een palidroom')
+else:
+    print('het woord', woord, 'is geen palidroom')

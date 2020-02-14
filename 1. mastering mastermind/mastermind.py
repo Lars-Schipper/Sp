@@ -1,36 +1,43 @@
-import random
-import funties
+import functies
 
 
 
-kleur_opties = ['1', '2', '3', '4', '5', '6']   #kleuren opties definiëren
 
 # main_loop ===============================================
 while True:
     wie_raad = input('wil je dat de computer raad?(y/n/q)')
 
-    if wie_raad == 'y': # de computer raad
-        a = input_secret()
-        b = gok_generator()
+
+
+
+    # ===================================================== de computer raad
+    if wie_raad == 'y' or wie_raad == 'ja':
+        a = functies.input_secret()
         i = 0
         while True:
             i += 1
             print(i)
 
-            # if check(a, gok_generator()) == True:  #de computer zelf automatisch laten raden
+            # if functies.check(a, gok_generator()) == True:  #de computer zelf automatisch laten raden
             #     break
 
-            if check(a, b) == True:
+            if functies.check(a, functies.input_gok()) == True:
                 break
-    # ======================================================
-    elif wie_raad == 'n':               # ik raad
 
-        secret = secret_generator()
+
+
+    # ====================================================== speler raad
+    elif wie_raad == 'n' or wie_raad == 'nee' or wie_raad == 'ik':
+
+        secret = functies.secret_generator()
         print(secret)
         while True:
-            if check(secret, input_gok()) == True:
+            if functies.check(secret, functies.input_gok()) == True:
                 break
-    #========================================================
-    elif wie_raad == 'q':               # als q wordt ingevoerd eindigt het programma
+
+
+
+    #======================================================== programma word afgesloten
+    elif wie_raad == 'q' or wie_raad == 'quit' or wie_raad == 'exit':
         print('bedankt voor het spelen')
         break

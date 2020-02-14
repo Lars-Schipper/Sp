@@ -1,3 +1,10 @@
+import random
+
+
+kleur_opties = ['1', '2', '3', '4', '5', '6']   #kleuren opties definiëren
+
+
+
 def check(secret, gok):
     print('secret = ', secret, 'gok = ', gok)
     zwarte_pin = 0

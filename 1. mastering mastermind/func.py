@@ -56,30 +56,31 @@ def secret_generator():
     return secret_g
 
 def algoritme_1(secret):
-    gok_1 = gok_generator()
+
     lijst = keuze_lijst()
 
 
 
 
     while len(lijst) > 1:
-
-        stap_1 = check(secret, gok_1)
-        zwarte_pinnen = stap_1[0]
-        witte_pinnen = stap_1[1]
         i = random.randrange(0, len(lijst))
         gok = lijst[i]
+        stap_1 = check(secret, gok)
+        zwarte_pinnen = stap_1[0]
+        witte_pinnen = stap_1[1]
+
         for element in lijst:
             checker = check(element, gok)
             zwarte_pinnen_gecheckt = checker[0]
             witte_pinnen_gechekt = checker[1]
-
             if zwarte_pinnen != zwarte_pinnen_gecheckt or witte_pinnen != witte_pinnen_gechekt:
                 lijst.remove(element)
-        print(lijst)
+
 
     if lijst[0] == secret:
-        return True
+        waarheid = 1
+        return lijst, waarheid
+
     return False
 
 def algoritme_2(secret):
@@ -92,10 +93,11 @@ def algoritme_2(secret):
 
 def keuze_lijst():
     lijst = []
-    for i in range(1, 7):
-        for j in range(1, 7):
-            for a in range(1, 7):
-                for b in range(1, 7):
+    kleuren = ['1','2','3','4','5','6']
+    for i in kleuren:
+        for j in kleuren:
+            for a in kleuren:
+                for b in kleuren:
                     lijst.append([i, j, a, b])
 
     return lijst

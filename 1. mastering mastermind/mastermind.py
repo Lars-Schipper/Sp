@@ -9,19 +9,43 @@ while True:
 
     # ===================================================== de computer raad
     if wie_raad == 'y' or wie_raad == 'ja':
-        i = 0
-        secret = func.input_secret()
-        while True:
-            i += 1
-            gok = func.gok_generator()
-            print(i , gok)
-            check = func.check(secret, gok)
-            zwart = check[0]
-            wit = check[1]
 
-            if zwart == 4:
-                print('\n\n\n\n\n\n\nGefeliciteerd de computer heeft je code gerade in:', i, 'beurt(en)\n')
+        while True:
+
+            algoritme_kueze = input('welk algoritme wil je gebruiken(1,2 of 3): ')
+
+            if algoritme_kueze == '1':
+
+                secret = func.input_secret()
+                algoritme_1 = func.algoritme_1(secret)[0]
+
+                print('secret = {}, algo = {}'.format(secret, algoritme_1[0]))
+
+                if algoritme_1[0] == secret:
+                    print('jouwn code was:', algoritme_1[0])
+                    print('hij werkt eindelijk')
+                else:
+                    print('hij doet nogsteeds niks')
+
+
+
+
+
+
+
+
+            elif algoritme_kueze == '2':
+                secret = func.input_secret()
+                print(func.algoritme_2(secret))
+
+            elif algoritme_kueze == '3':
+                print('algoritme 3')
+
+            elif algoritme_kueze == 'q' or algoritme_kueze == 'quit' or algoritme_kueze == 'exit':
                 break
+
+
+
 
     # ====================================================== speler raad
     elif wie_raad == 'n' or wie_raad == 'nee' or wie_raad == 'ik':

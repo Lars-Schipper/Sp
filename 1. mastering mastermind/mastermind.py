@@ -52,7 +52,10 @@ while True:
 
         if algoritme_kueze == '1':
             secret = func.input_secret()
-            print(func.algoritme_1(secret))
+            if func.algoritme_1(secret) == True:
+                print('hij werkt eindelijk')
+            else:
+                print('hij doet nogsteeds niks')
 
         elif algoritme_kueze == '2':
             secret = func.input_secret()

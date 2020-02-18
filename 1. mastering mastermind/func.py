@@ -8,7 +8,6 @@ def check(secret, gok):
     for i in range(0, len(secret)):
         tijdelijk.append(secret[i])
 
-    # while True:
     for i in range(0, len(secret)):
         if secret[i] == gok[i]:
             zwarte_pin += 1

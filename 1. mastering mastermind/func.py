@@ -12,6 +12,7 @@ def check(secret, gok):
         if secret[i] == gok[i]:
             zwarte_pin += 1
             tijdelijk.remove(gok[i])
+
     for i in range(0, len(secret)):
         if gok[i] in tijdelijk:
             tijdelijk.remove(gok[i])

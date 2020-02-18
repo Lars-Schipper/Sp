@@ -1,10 +1,5 @@
 import random
 
-
-kleur_opties = ['1', '2', '3', '4', '5', '6']   #kleuren opties definiëren
-
-
-
 def check(secret, gok):
     zwarte_pin = 0
     witte_pin = 0
@@ -12,18 +7,17 @@ def check(secret, gok):
 
     for i in range(0, len(secret)):
         tijdelijk.append(secret[i])
-    # print('tijdelijk: ', tijdelijk)
 
-    while True:
-        for i in range(0, len(secret)):
-            if secret[i] == gok[i]:
-                zwarte_pin += 1
-                tijdelijk.remove(gok[i])
-        for i in range(0, len(secret)):
-            if gok[i] in tijdelijk:
-                tijdelijk.remove(gok[i])
-                witte_pin += 1
-        return zwarte_pin, witte_pin
+    # while True:
+    for i in range(0, len(secret)):
+        if secret[i] == gok[i]:
+            zwarte_pin += 1
+            tijdelijk.remove(gok[i])
+    for i in range(0, len(secret)):
+        if gok[i] in tijdelijk:
+            tijdelijk.remove(gok[i])
+            witte_pin += 1
+    return zwarte_pin, witte_pin
 
 def input_secret():
     secret = input('voer je code in: ').split(',')
@@ -43,6 +37,7 @@ def input_gok():
 
 def gok_generator():
     gok = []
+    kleur_opties = ['1', '2', '3', '4', '5', '6']
     for i in range(0, 4):
         gok.append(kleur_opties[random.randrange(0, 6)])
 
@@ -50,6 +45,7 @@ def gok_generator():
 
 def secret_generator():
     secret_g= []
+    kleur_opties = ['1', '2', '3', '4', '5', '6']
     for i in range(0, 4):
         secret_g.append(kleur_opties[random.randrange(0, 6)])
 
@@ -58,9 +54,6 @@ def secret_generator():
 def algoritme_1(secret):
 
     lijst = keuze_lijst()
-
-
-
 
     while len(lijst) > 1:
         i = random.randrange(0, len(lijst))

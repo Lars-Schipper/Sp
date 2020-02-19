@@ -1,6 +1,6 @@
 import random
 
-def check(secret, gok):
+def check(secret, gok): #deze functie controleerd hoeveel cijfers op de juiste plek zitten en hoeveel wel in de code zitten maar niet op de juiste plek staan
     zwarte_pin = 0
     witte_pin = 0
     tijdelijk = []
@@ -17,9 +17,10 @@ def check(secret, gok):
         if gok[i] in tijdelijk:
             tijdelijk.remove(gok[i])
             witte_pin += 1
+
     return zwarte_pin, witte_pin
 
-def input_secret():
+def input_secret():  # deze functie vraagt om een input van de gebruiker en returt deze als secret
     secret = input('voer je code in: ').split(',')
 
     while len(secret) != 4:
@@ -27,7 +28,7 @@ def input_secret():
 
     return secret
 
-def input_gok():
+def input_gok():  #deze functie vraag om een inpupt voor de gok van de gebruiker
     gok = input('voer je gok in: ').split(',')
 
     while len(gok) != 4:
@@ -35,7 +36,7 @@ def input_gok():
 
     return gok
 
-def gok_generator():
+def gok_generator():   #deze functie genereerd een random code om als gok te gebruiken
     gok = []
     kleur_opties = ['1', '2', '3', '4', '5', '6']
     for i in range(0, 4):
@@ -43,7 +44,7 @@ def gok_generator():
 
     return gok
 
-def secret_generator():
+def secret_generator():   #deze functie genereerd een random secret voor het programma zodat de spelen kan raden
     secret_g= []
     kleur_opties = ['1', '2', '3', '4', '5', '6']
     for i in range(0, 4):
@@ -51,7 +52,7 @@ def secret_generator():
 
     return secret_g
 
-def algoritme_1(secret):
+def algoritme_1(secret): #deze functie is het eerste algoritme dat gebruikt kan worden om het secret van de speler te raden
 
     lijst = keuze_lijst()
 
@@ -76,15 +77,22 @@ def algoritme_1(secret):
 
     return False
 
-def algoritme_2(secret):
+def algoritme_2(secret):  #deze functie is het tweede algoritme dat gebruikt kan worden om het secret van de speler te raden
     print('algoritme 2')
+
     checker = check(secret, gok_generator())
     zwart = checker[0]
     wit = checker[1]
 
     print('zwart = {}, wit = {}'.format(zwart,wit))
 
-def keuze_lijst():
+def algoritme_3(secret):  #deze functie is het derde algoritme dat gebruikt kan worden om het secret van de speler te raden
+    if secret == secret:
+        return secret
+    else:
+        returnaa
+
+def keuze_lijst(): #deze funtie genereerd een lijst met alle mogelijke combinaties voor de secret
     lijst = []
     kleuren = ['1','2','3','4','5','6']
     for i in kleuren:

@@ -22,14 +22,15 @@ while True:
                     print('jouwn code was:', algoritme_1[0])
                     print('hij werkt eindelijk')
                 else:
-                    print('hij doet nogsteeds niks')
+                    print('================ERROR================')
 
             elif algoritme_kueze == '2': # ====================================== Algoritme 2
                 secret = func.input_secret()
                 print(func.algoritme_2(secret))
 
             elif algoritme_kueze == '3': #======================================= Algoritme 3
-                print('algoritme 3')
+                secret = func.input_secret()
+                print(func.algoritme_3(secret))
 
             elif algoritme_kueze == 'q' or algoritme_kueze == 'quit' or algoritme_kueze == 'exit':
                 break

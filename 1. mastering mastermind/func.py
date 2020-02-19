@@ -1,3 +1,4 @@
+# lars schipper
 import random
 
 def check(secret, gok): #deze functie controleerd hoeveel cijfers op de juiste plek zitten en hoeveel wel in de code zitten maar niet op de juiste plek staan

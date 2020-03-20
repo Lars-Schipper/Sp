@@ -8,6 +8,7 @@ cur.execute("DROP TABLE IF EXISTS profiles CASCADE")
 cur.execute("DROP TABLE IF EXISTS profiles_previously_viewed CASCADE")
 cur.execute("DROP TABLE IF EXISTS sessions CASCADE")
 cur.execute("DROP TABLE IF EXISTS lijkt_op CASCADE")
+cur.execute("DROP TABLE IF EXISTS populaire_producten CASCADE")
 
 # All product-related tables
 
@@ -60,6 +61,15 @@ cur.execute("""CREATE TABLE lijkt_op
                  product_1 VARCHAR,
                  product_2 VARCHAR,
                  product_3 VARCHAR,
+                 FOREIGN KEY (prodID) REFERENCES products(id)); """)
+
+cur.execute("""CREATE TABLE populaire_producten
+                (prodID VARCHAR,
+                 product_1 VARCHAR,
+                 product_2 VARCHAR,
+                 product_3 VARCHAR,
+                 product_4 VARCHAR,
+                 product_5 VARCHAR,
                  FOREIGN KEY (prodID) REFERENCES products(id)); """)
 
 c.commit()
